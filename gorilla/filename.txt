@@ -1,0 +1,6 @@
+Classname: dt Value: Num
+Classname: id Value: abc
+Classname: Optr_assign Value: =
+Classname: literal Value: 43252
+Classname: Punct_terminator Value: ;
+Classname: $ Value: $
