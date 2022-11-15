@@ -1,1 +1,12 @@
-class A open void Java() open close close
+
+
+class A 
+open
+ 
+void Java() 
+open  
+
+close 
+int a;
+close
+

@@ -1,7 +1,7 @@
 {
  "s":"Private?Protected?Final?Class?Interface",
  "CM":"Final?Class",
- "AM": "Private?Protected?final?Class",
+ "AM": "Private?Protected?Final?Class",
  "INH":"extends?open?Implements",
  "Defs":"Private?Protected?Final?Class?Interface",
  "CB":"void?close?float?int?Char?double?boolean?def",

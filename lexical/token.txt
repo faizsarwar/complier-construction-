@@ -1,1 +1,1 @@
-(Class,Class,1)?(Identifier,A,1)?(Bracket,open,1)?(Keyword,void,1)?(Keyword,Java,1)?(Bracket,(,1)?(Bracket,),1)?(Bracket,open,1)?(Bracket,close,1)?(Bracket,close,1)?@
+(Class,Class,3)?(Identifier,A,3)?(Bracket,open,4)?(Keyword,void,6)?(Keyword,Java,6)?(Bracket,(,6)?(Bracket,),6)?(Bracket,open,7)?(Bracket,close,9)?(Keyword,int,10)?(Identifier,a,10)?(Punctuator,;,10)?(Bracket,close,11)?(EndMarker,@,-)?

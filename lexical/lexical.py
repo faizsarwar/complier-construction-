@@ -12,7 +12,7 @@ Relational_Operation = ['<', '>', '<=', '>=', '!=', '==']
 And_Logical = ['&&']
 OR_Logical = ['||']
 Brackets = ['(', ')', 'open', 'close', '[', ']']
-Key_words = ['boolean','this',"Java", 'char', 'int', 'double', 'Private', 'Protected', 'Final', 'try', 'catch', 'finally', 'throw', 'break', 'case', 'continue', 'while', 'range', 'switch',
+Key_words = ["=",'boolean','this',"Java", 'char', 'int', 'double', 'Private', 'Protected', 'Final', 'try', 'catch', 'finally', 'throw', 'break', 'case', 'continue', 'while', 'range', 'switch',
              'if', 'else', 'extends','string', 'implements', 'new', 'return', 'Interface', 'this', 'throws', 'void', 'super', 'accept', 'decline', "null", 'def','const','main']
 punctuators =[',',':',';','.']
 class_ = ["Class", "class"]
@@ -108,7 +108,6 @@ class lexeical:
         token=[]
         while(self.current_char != None):
             position_start = self.position.duplicate()
-
             if self.current_char in ' \t':
                 self.next_pos()
             if self.current_char in ' \n':
@@ -120,6 +119,9 @@ class lexeical:
             elif self.current_char in Brackets:
                 token.append(self.isBracket())
                 self.next_pos()
+            elif self.current_char == "=":
+                token.append(self.isEqualsTo())
+                self.next_pos()                
             elif self.current_char in punctuators:
                 token.append(self.isPantuator())
                 self.next_pos()
@@ -438,6 +440,13 @@ class lexeical:
             f.write(f'(Bracket,{self.current_char},{self.position.line+1})?')
             return Token('Bracket', self.current_char, self.position.line+1)
 
+    def isEqualsTo(self):
+        # writing tokens
+        f = open(
+             r'./token.txt','a')
+        while self.current_char != None and self.current_char == '=':
+            f.write(f'(Equals,{self.current_char},{self.position.line+1})?')
+            return Token('Equals', self.current_char, self.position.line+1)
     def isPantuator(self):
         # writing tokens
         f = open(
@@ -462,7 +471,7 @@ def run(fileName):
     
     # Placing End marker at the end
     OpenFile = open(r'./token.txt','a')
-    OpenFile.write("@")
+    OpenFile.write(f'(EndMarker,@,-)?')
     return Tokens, error
 
 
